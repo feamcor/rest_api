@@ -1,0 +1,26 @@
+[package]
+name = "rest_api"
+version = "0.1.0"
+authors = ["Fábio Corrêa <feamcor@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "2.0.0"
+actix-rt = "1.0.0"
+dotenv = "0.15"
+log = "0.4"
+env_logger = "0.7"
+serde = "1.0"
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+diesel = { version = "1.4", features = ["postgres", "r2d2", "uuid", "chrono"] }
+diesel_migrations = "1.4"
+lazy_static = "1.4"
+r2d2 = "0.8"
+uuid = { version = "0.6", features = ["serde", "v4"] }
+rand = "0.7"
+rust-argon2 = "0.8"
+actix-redis = { version = "0.8", features = ["web"] }
+actix-session = "0.3"
