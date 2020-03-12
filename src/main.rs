@@ -16,6 +16,8 @@ use std::env;
 mod api_error;
 mod auth;
 mod db;
+mod email;
+mod email_verification_token;
 mod schema;
 mod user;
 

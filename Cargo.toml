@@ -24,3 +24,5 @@ rand = "0.7"
 rust-argon2 = "0.8"
 actix-redis = { version = "0.8", features = ["web"] }
 actix-session = "0.3"
+hex = "0.4"
+reqwest = "0.9"

@@ -14,10 +14,10 @@ pub struct ApiError {
 }
 
 impl ApiError {
-    pub fn new(status_code: u16, message: String) -> ApiError {
+    pub fn new<T: Into<String>>(status_code: u16, message: T) -> ApiError {
         ApiError {
             status_code,
-            message,
+            message: message.into(),
         }
     }
 }
@@ -32,7 +32,7 @@ impl From<DieselError> for ApiError {
     fn from(error: DieselError) -> ApiError {
         match error {
             DieselError::DatabaseError(_, err) => ApiError::new(409, err.message().to_string()),
-            DieselError::NotFound => ApiError::new(404, "Record not found".to_string()),
+            DieselError::NotFound => ApiError::new(404, "Record not found"),
             err => ApiError::new(500, format!("Diesel error: {}", err)),
         }
     }
